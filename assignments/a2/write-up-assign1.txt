@@ -1,0 +1,12 @@
+# Assignment 2
+
+## Contact
+Name: Wendy Carvalho
+Email: wendy_carvalho@student.uml.edu
+
+## Degree of Success
+I think my degree of success is 90%. 
+
+## Description and Problems
+I spent a long time trying to think of a way to accurately and efficiently perform addition between two IEEE Floating Point numbers. I decided it would be convenient to be able to use the information stored by the program in the unions during scanf rather than doing logical operations with the bit_strings from the get-go. Therefore, after storing the floats for addition in their separate unions, I extracted their respective mantissas into their "helper" int variables. To expose the hidden bit, I or-ed each mantissa by 1 << 23, which moves the number 1 to the 24th position in the mantissa. I then saved their respective exponents to their own variables, checked which one was bigger using simple subtraction, then shifted the smaller number's mantissa by that amount after if they were negative (and making them non-negative), if they were over 24 (making it just 24 since the mantissa doesn't have any more of that), if they're denormalized shift it by one less than the shift count, and if all else is false, just shift by the normal amount calculated. Having the mantissas aligned, I performed normal addition and checked for any overflow by shifting it to the right and increasing the exponent if there was anywhere. I saved this final value inside the mantissa of a union object. Then I set the bit_string character arrays for all floats used in the operation for printing.
+

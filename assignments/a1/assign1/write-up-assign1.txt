@@ -1,0 +1,12 @@
+# Assignment 1
+
+## Contact
+Name: Wendy Carvalho
+Email: wendy_carvalho@student.uml.edu
+
+## Degree of Success
+I think my degree of success is 95%. 
+
+## Description and Problems
+To approach this assignment, I first looked at the reference code given to see what parts were already given (such as the exponent, mantissa, and sign bits already being stored as members inside the union). Then I played around with accessing these members and printing them, including the information saved as a float and an int to see what the format is. I also stepped through the code in order to look at what numbers are saved in each variable. To print out the correct information, I made sure to use the appropriate format specifiers, especially to print out hexadecimals and floats. I also spent some time thinking about how to format the print information with tabs, to make sure everything aligns. I also reached out to Professor Moloney with my doubts about the format and he suggested I print out the different parts using the address of the bit array at the element where, for example, the mantissa or the exponent starts, and adding a temporary null terminator at the end of each information, rather than using a for loop to print each character in a range. One problem I think I have is that when returning the original value saved by scanf("the floating value for [INPUT_NUMBER] is broken out as:"), some of the decimal numbers get lost when INPUT_NUMBER is saved as a float, so the program doesn't print the exact same number that was typed in. Additionally, even though I paid attention to the formatting with tabs and spaces in the print output, it may look different on different compilers, though I don't believe it will. Otherwise, I think the program runs as expected.
+
